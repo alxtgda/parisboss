@@ -1,0 +1,15 @@
+gem 'dbi'
+require 'dbi'
+
+gem 'activerecord'
+require 'active_record'
+
+def with_db
+  DBI.connect("dbi:Mysql:parisbossdb:localhost", "parisboss_user", "password") do |c|
+                    yield c
+  end
+end
+
+def activerecord_connect
+  ActiveRecord::Base.establish_connection(adapter: "mysql",host: "localhost",username: "parisboss_user", password: "password", database: "parisbossdb")
+end
