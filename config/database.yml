@@ -9,8 +9,8 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
-  username:parisboss_user
-  password: password
+  username: root
+  password: proxi23E
 
 development:
   <<: *default
